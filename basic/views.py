@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from basic.models import User, Feedback
+from basic.models import User, Feedback, Team
 
 def index(request):
 	context = {}
@@ -35,6 +35,12 @@ def feedback(request):
 		return redirect('thanks')
 	else:
 		return render(request, 'feedback.html', context)
+
+def contacts(request):
+	context = {}
+	team = Team.objects.all()
+	context['team'] = team
+	return render(request, 'contacts.html', context)
 
 def thanks(request):
 	return render(request, 'thanks.html', {})

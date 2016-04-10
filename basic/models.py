@@ -18,3 +18,12 @@ class Feedback(models.Model):
 
 	def __unicode__(self):
 		return self.title+ ' | '+self.feedback
+
+class Team(models.Model):
+	name = models.CharField(max_length=30)
+	branch = models.CharField(max_length=50)
+	phone = models.CharField(max_length=15)
+	email = models.EmailField()
+
+	def __unicode__(self):
+		return self.name
