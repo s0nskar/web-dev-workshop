@@ -31,10 +31,11 @@
 	  <div class="mdl-cell mdl-cell--8-col">
 		<form method="post">
 			{% csrf_token %}
-		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-		    <input class="mdl-textfield__input" maxlength="5" name="ratings" type="text" id="ratings">
-		    <label class="mdl-textfield__label" for="ratings">Ratings out of 10</label>
-		  </div><br>			
+		  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			  <label style="color: rgba(0,0,0,.26);font-size: 16px;" for="ratings" id="reading">Ratings (5/10)</label>
+			  <input class="mdl-slider mdl-js-slider" type="range"
+				  min="0" max="10" value="5" step="1" tabindex="0" id="ratings" name="ratings">	
+		  </div>	<br>
 		  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 		    <input class="mdl-textfield__input" size="60" name="feedback" type="text" id="feedback">
 		    <label class="mdl-textfield__label" for="feedback">Feedback</label>
@@ -49,5 +50,12 @@
     </div>
   </main>
 </div>
+<script type="text/javascript">
+var rateBar = document.getElementById('ratings');
+var ratings = document.getElementById('reading');
+rateBar.addEventListener("input", function (e) {
+		ratings.textContent = "Ratings ("+rateBar.value+"/10)";
+});
+</script>
 </body>
 </html>
