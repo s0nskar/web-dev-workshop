@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Web Dev Workshop</title>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
-	<script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+	<link rel="stylesheet" href="/static/css/material.min.css">
+	<script defer src="/static/js/material.min.js"></script>
 </head>
 <body>
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
@@ -21,7 +22,9 @@
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="{% url 'index' %}">Attendence</a>
       <a class="mdl-navigation__link" href="{% url 'feedback' %}">Feedback</a>
-      <a class="mdl-navigation__link" href="{% url 'contacts' %}">Contacts</a>      
+      <a class="mdl-navigation__link" href="{% url 'contacts' %}">Contacts</a>
+      <a class="mdl-navigation__link" target="__blank" href="/static/backend.pdf">Backend Slide</a>
+      <a class="mdl-navigation__link" target="__blank" href="/static/frontend.pdf">Frontend Slide</a>    
     </nav>
   </div>
   <main class="mdl-layout__content">
